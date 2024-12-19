@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{251b6dc3-7017-4307-bdc0-9598c4e1c0fb}</ProjectGuid>
+    <RootNamespace>Dx12Libs</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>$(projectdir)pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(DXTEX_DIR);$(DX12HELPER_DIR);$(BOOST_INC);$(ASSIMP_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ProjectDir)pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>$(projectdir)pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(DXTEX_DIR);$(DX12HELPER_DIR);$(BOOST_INC);$(ASSIMP_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ProjectDir)pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="d3dx12.h" />
+    <ClInclude Include="lib\define\type\types.h" />
+    <ClInclude Include="lib\graphics\dx12\bufferView\bufferView.h" />
+    <ClInclude Include="lib\graphics\dx12\buffer\buffer.h" />
+    <ClInclude Include="lib\graphics\dx12\buffer\constantBuffer\constantBuffer.h" />
+    <ClInclude Include="lib\graphics\dx12\commandList\commandList.h" />
+    <ClInclude Include="lib\graphics\dx12\commandQueue\commandQueue.h" />
+    <ClInclude Include="lib\graphics\dx12\descriptorHeap\descriptorHeap.h" />
+    <ClInclude Include="lib\graphics\dx12\descriptorSet\descriptorSet.h" />
+    <ClInclude Include="lib\graphics\dx12\descriptor\descriptor.h" />
+    <ClInclude Include="lib\graphics\dx12\device\device.h" />
+    <ClInclude Include="lib\graphics\dx12\fence\fence.h" />
+    <ClInclude Include="lib\application\application.h" />
+    <ClInclude Include="lib\graphics\dx12\mesh\format\meshFormat.h" />
+    <ClInclude Include="lib\graphics\dx12\mesh\mesh.h" />
+    <ClInclude Include="lib\graphics\dx12\mesh\meshManager\meshManager.h" />
+    <ClInclude Include="lib\graphics\dx12\pipelineState\pipelineState.h" />
+    <ClInclude Include="lib\graphics\dx12\renderCommand\renderCommand.h" />
+    <ClInclude Include="lib\graphics\dx12\resourceManager\resourceManager.h" />
+    <ClInclude Include="lib\graphics\dx12\resource\base\resourceLoader.h" />
+    <ClInclude Include="lib\graphics\dx12\resource\mesh\resourceMesh.h" />
+    <ClInclude Include="lib\graphics\dx12\resource\texture\resourceTexture.h" />
+    <ClInclude Include="lib\graphics\dx12\ringBuffer\ringBuffer.h" />
+    <ClInclude Include="lib\application\game.h" />
+    <ClInclude Include="lib\graphics\dx12\rootSignatureManager\rootSignatureManager.h" />
+    <ClInclude Include="lib\graphics\dx12\rootSignature\rootSignature.h" />
+    <ClInclude Include="lib\graphics\dx12\sampler\sampler.h" />
+    <ClInclude Include="lib\graphics\dx12\sceneMesh\sceneMesh.h" />
+    <ClInclude Include="lib\graphics\dx12\sceneRoot\sceneRoot.h" />
+    <ClInclude Include="lib\graphics\dx12\shaderManager\shaderManager.h" />
+    <ClInclude Include="lib\graphics\dx12\shader\shader.h" />
+    <ClInclude Include="lib\graphics\dx12\swapChain\swapChain.h" />
+    <ClInclude Include="lib\graphics\dx12\textureView\textureView.h" />
+    <ClInclude Include="lib\graphics\dx12\texture\texture.h" />
+    <ClInclude Include="lib\imgui\gui.h" />
+    <ClInclude Include="lib\imgui\PSGui.h" />
+    <ClInclude Include="lib\imgui\VSGui.h" />
+    <ClInclude Include="lib\utility\crc.h" />
+    <ClInclude Include="lib\utility\fileStream\fileStream.h" />
+    <ClInclude Include="lib\utility\resourceRelease\deatnList.h" />
+    <ClInclude Include="lib\utility\stringUtility.h" />
+    <ClInclude Include="lib\utility\timeStamp\timeStamp.h" />
+    <ClInclude Include="lib\utility\utility.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="thirdParty\cereal\access.hpp" />
+    <ClInclude Include="thirdParty\cereal\archives\adapters.hpp" />
+    <ClInclude Include="thirdParty\cereal\archives\binary.hpp" />
+    <ClInclude Include="thirdParty\cereal\archives\json.hpp" />
+    <ClInclude Include="thirdParty\cereal\archives\portable_binary.hpp" />
+    <ClInclude Include="thirdParty\cereal\archives\xml.hpp" />
+    <ClInclude Include="thirdParty\cereal\cereal.hpp" />
+    <ClInclude Include="thirdParty\cereal\details\helpers.hpp" />
+    <ClInclude Include="thirdParty\cereal\details\polymorphic_impl.hpp" />
+    <ClInclude Include="thirdParty\cereal\details\polymorphic_impl_fwd.hpp" />
+    <ClInclude Include="thirdParty\cereal\details\static_object.hpp" />
+    <ClInclude Include="thirdParty\cereal\details\traits.hpp" />
+    <ClInclude Include="thirdParty\cereal\details\util.hpp" />
+    <ClInclude Include="thirdParty\cereal\external\base64.hpp" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\allocators.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\cursorstreamwrapper.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\document.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\encodedstream.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\encodings.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\error\en.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\error\error.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\filereadstream.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\filewritestream.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\fwd.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\internal\biginteger.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\internal\diyfp.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\internal\dtoa.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\internal\ieee754.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\internal\itoa.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\internal\meta.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\internal\pow10.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\internal\regex.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\internal\stack.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\internal\strtod.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\internal\swap.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\istreamwrapper.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\memorybuffer.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\memorystream.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\msinttypes\inttypes.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\msinttypes\stdint.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\ostreamwrapper.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\pointer.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\prettywriter.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\rapidjson.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\reader.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\schema.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\stream.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\stringbuffer.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidjson\writer.h" />
+    <ClInclude Include="thirdParty\cereal\external\rapidxml\rapidxml.hpp" />
+    <ClInclude Include="thirdParty\cereal\external\rapidxml\rapidxml_iterators.hpp" />
+    <ClInclude Include="thirdParty\cereal\external\rapidxml\rapidxml_print.hpp" />
+    <ClInclude Include="thirdParty\cereal\external\rapidxml\rapidxml_utils.hpp" />
+    <ClInclude Include="thirdParty\cereal\macros.hpp" />
+    <ClInclude Include="thirdParty\cereal\specialize.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\array.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\atomic.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\base_class.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\bitset.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\boost_variant.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\chrono.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\common.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\complex.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\concepts\pair_associative_container.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\deque.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\forward_list.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\functional.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\list.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\map.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\memory.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\optional.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\polymorphic.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\queue.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\set.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\stack.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\string.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\tuple.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\unordered_map.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\unordered_set.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\utility.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\valarray.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\variant.hpp" />
+    <ClInclude Include="thirdParty\cereal\types\vector.hpp" />
+    <ClInclude Include="thirdParty\cereal\version.hpp" />
+    <ClInclude Include="thirdParty\stb\stb_image.h" />
+    <ClInclude Include="thirdParty\tinyexr\miniz.h" />
+    <ClInclude Include="thirdParty\tinyexr\tinyexr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lib\application\game.cpp" />
+    <ClCompile Include="lib\graphics\dx12\bufferView\bufferView.cpp" />
+    <ClCompile Include="lib\graphics\dx12\buffer\buffer.cpp" />
+    <ClCompile Include="lib\graphics\dx12\commandList\commandList.cpp" />
+    <ClCompile Include="lib\graphics\dx12\commandQueue\commandQueue.cpp" />
+    <ClCompile Include="lib\graphics\dx12\descriptorHeap\descriptorHeap.cpp" />
+    <ClCompile Include="lib\graphics\dx12\descriptor\descriptor.cpp" />
+    <ClCompile Include="lib\graphics\dx12\device\device.cpp" />
+    <ClCompile Include="lib\graphics\dx12\fence\fence.cpp" />
+    <ClCompile Include="lib\application\application.cpp" />
+    <ClCompile Include="lib\graphics\dx12\mesh\mesh.cpp" />
+    <ClCompile Include="lib\graphics\dx12\mesh\meshManager\meshManager.cpp" />
+    <ClCompile Include="lib\graphics\dx12\pipelineState\pipelineState.cpp" />
+    <ClCompile Include="lib\graphics\dx12\pipelineState\pipelineState.cpp" />
+    <ClCompile Include="lib\graphics\dx12\renderCommand\renderCommand.cpp" />
+    <ClCompile Include="lib\graphics\dx12\resourceManager\resourceManager.cpp" />
+    <ClCompile Include="lib\graphics\dx12\resource\base\resourceLoader.cpp" />
+    <ClCompile Include="lib\graphics\dx12\resource\texture\resourceTexture.cpp" />
+    <ClCompile Include="lib\graphics\dx12\ringBuffer\ringBuffer.cpp" />
+    <ClCompile Include="lib\graphics\dx12\rootSignatureManager\rootSignatureManager.cpp" />
+    <ClCompile Include="lib\graphics\dx12\rootSignature\rootSignature.cpp" />
+    <ClCompile Include="lib\graphics\dx12\sampler\sampler.cpp" />
+    <ClCompile Include="lib\graphics\dx12\sceneMesh\sceneMesh.cpp" />
+    <ClCompile Include="lib\graphics\dx12\sceneRoot\sceneRoot.cpp" />
+    <ClCompile Include="lib\graphics\dx12\shaderManager\shaderManager.cpp" />
+    <ClCompile Include="lib\graphics\dx12\shader\shader.cpp" />
+    <ClCompile Include="lib\graphics\dx12\swapChain\swapChain.cpp" />
+    <ClCompile Include="lib\graphics\dx12\textureView\textureView.cpp" />
+    <ClCompile Include="lib\graphics\dx12\texture\texture.cpp" />
+    <ClCompile Include="lib\imgui\gui.cpp" />
+    <ClCompile Include="lib\utility\timeStamp\timeStamp.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="thirdParty\tinyexr\miniz.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Default</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Default</CompileAs>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/TC %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">/TC %(AdditionalOptions)</AdditionalOptions>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ForcedIncludeFiles>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ForcedIncludeFiles>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assimp-vc143-mt.dll" />
+    <None Include="data\base_pass.p.cso" />
+    <None Include="data\base_pass.vv.cso" />
+    <None Include="data\blur_x.p.cso" />
+    <None Include="data\blur_y.p.cso" />
+    <None Include="data\clear_hash.c.cso" />
+    <None Include="data\lighting.p.cso" />
+    <None Include="data\linear_depth.p.cso" />
+    <None Include="data\post_process.vv.cso" />
+    <None Include="data\project_hash.c.cso" />
+    <None Include="data\reproject_reflection.p.cso" />
+    <None Include="data\reproject_reflection.vv.cso" />
+    <None Include="data\resolve_hash.p.cso" />
+    <None Include="data\sponza.mesh" />
+    <None Include="data\tile_lighting.c.cso" />
+    <None Include="data\water.p.cso" />
+    <None Include="data\water.vv.cso" />
+    <None Include="packages.config" />
+    <None Include="thirdParty\cereal\external\rapidxml\manual.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="assimp-vc143-mt.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="data\wave_normal.tga" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\directxtex_uwp.2024.10.29.1\build\native\directxtex_uwp.targets" Condition="Exists('..\packages\directxtex_uwp.2024.10.29.1\build\native\directxtex_uwp.targets')" />
+    <Import Project="..\packages\WinPixEventRuntime.1.0.240308001\build\WinPixEventRuntime.targets" Condition="Exists('..\packages\WinPixEventRuntime.1.0.240308001\build\WinPixEventRuntime.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\directxtex_uwp.2024.10.29.1\build\native\directxtex_uwp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\directxtex_uwp.2024.10.29.1\build\native\directxtex_uwp.targets'))" />
+    <Error Condition="!Exists('..\packages\WinPixEventRuntime.1.0.240308001\build\WinPixEventRuntime.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\WinPixEventRuntime.1.0.240308001\build\WinPixEventRuntime.targets'))" />
+  </Target>
+</Project>
