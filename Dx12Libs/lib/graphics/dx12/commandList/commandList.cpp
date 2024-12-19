@@ -88,6 +88,7 @@ namespace ym
 	//----
 	void CommandList::Close()
 	{
+
 		auto hr = pCmdList_->Close();
 		assert(SUCCEEDED(hr));
 	}
